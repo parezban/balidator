@@ -43,10 +43,20 @@ const TypeValidator: BaseBalidatorType = {
     isURL: (arg: string) => {
         try {
             new URL(arg);
-            return true
         } catch (_) {
             return false;
         }
+        return true
+
+    },
+    isJSON: (arg: string) => {
+        try {
+            JSON.parse(arg)
+        } catch (_) {
+            return false;
+        }
+        return true
+
     },
     isDate: (arg: string) => {
         const dateObj = Date.parse(arg)
