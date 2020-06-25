@@ -21,6 +21,15 @@ const BaseBalidator: BaseBalidatorType = {
 }
 const RangeBalidator: RangeBalidatorType = {
     inRangeNumber: (value: number, min?: number, max?: number) => (min && max && min < value && value <= max) || (max && value <= max) || (min && min < value) || false,
+}
 
-
+const TypeValidator: BaseBalidatorType = {
+    isEmail: (arg: string) => {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(arg.toLowerCase());
+    },
+    isDate: (arg: string) => {
+        const dateObj = Date.parse(arg)
+        return !isNaN(dateObj);
+    },
 }
