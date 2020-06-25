@@ -28,6 +28,10 @@ const TypeValidator: BaseBalidatorType = {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(arg.toLowerCase());
     },
+    isImei: (arg: any) => {
+        const re = /^\d{15}(,\d{15})*$/;
+        return re.test(arg);
+    },
     isDate: (arg: string) => {
         const dateObj = Date.parse(arg)
         return !isNaN(dateObj);
