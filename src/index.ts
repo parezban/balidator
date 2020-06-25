@@ -32,6 +32,10 @@ const TypeValidator: BaseBalidatorType = {
         const re = /^\d{15}(,\d{15})*$/;
         return re.test(arg);
     },
+    isIPv4: (arg: string) => {
+        const re = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+        return re.test(arg);
+    },
     isDate: (arg: string) => {
         const dateObj = Date.parse(arg)
         return !isNaN(dateObj);
