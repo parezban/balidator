@@ -44,6 +44,10 @@ const TypeValidator: BaseBalidatorType = {
         const re = /^([0-9A-F]{2}[:-]){5}([0-9A-F]{2})$/;
         return re.test(arg);
     },
+    isHexRGB: (arg: string) => {
+        const re = /^#[0-9A-F]{6}$/i;
+        return re.test(arg);
+    },
     isURL: (arg: string) => {
         try {
             new URL(arg);
