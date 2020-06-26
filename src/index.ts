@@ -19,6 +19,15 @@ const BaseBalidator: BaseBalidatorType = {
     isPromise: (arg: any) => BaseBalidator.isDefined(arg.then) && BaseBalidator.isFunc(arg.then),
 
 }
+
+const CreditCardBalidator: BaseBalidatorType = {
+    isAmericanExpress: (arg: any) => {
+        const re = /^3[47]\d{13}$/;
+        return re.test(arg);
+    }
+}
+
+
 const RangeBalidator: RangeBalidatorType = {
     inRangeNumber: (value: number, min?: number, max?: number) => (min && max && min < value && value <= max) || (max && value <= max) || (min && min < value) || false,
 }
