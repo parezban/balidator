@@ -33,6 +33,10 @@ const CreditCardBalidator: BaseBalidatorType = {
         const re = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/
         return re.test(arg);
     },
+    isDiscover: (arg: any) => {
+        const re = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/
+        return re.test(arg);
+    },
 }
 
 
