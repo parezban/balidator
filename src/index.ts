@@ -28,7 +28,11 @@ const CreditCardBalidator: BaseBalidatorType = {
     isMasterCard: (arg: any) => {
         const re = /^(?:5[1-5][0-9]{14})$/
         return re.test(arg);
-    }
+    },
+    isVisa: (arg: any) => {
+        const re = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/
+        return re.test(arg);
+    },
 }
 
 
