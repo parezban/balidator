@@ -22,7 +22,7 @@ const BaseBalidator: BaseBalidatorType = {
 
 const CreditCardBalidator: BaseBalidatorType = {
     isAmericanExpress: (arg: any) => {
-        const re = /^3[47]\d{13}$/;
+        const re = /^(?:3[47][0-9]{13})$/;
         return re.test(arg);
     },
     isMasterCard: (arg: any) => {
