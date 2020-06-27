@@ -37,6 +37,10 @@ const CreditCardBalidator: BaseBalidatorType = {
         const re = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/
         return re.test(arg);
     },
+    isIranMellat: (arg: any) => {
+        const re = /^6104[0-9]{12,12}$/
+        return re.test(arg);
+    },
 }
 
 
