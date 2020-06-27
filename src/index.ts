@@ -41,6 +41,10 @@ const CreditCardBalidator: BaseBalidatorType = {
         const re = /^6104[0-9]{12,12}$/
         return re.test(arg);
     },
+    isIranParsian: (arg: any) => {
+        const re = /^6221\d{12,12}$/
+        return re.test(arg);
+    },
 }
 
 
