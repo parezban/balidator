@@ -47,6 +47,15 @@ const CreditCardBalidator: BaseBalidatorType = {
     },
 }
 
+const NumberBalidator: BaseBalidatorType = {
+    isEven: (arg: number) => {
+        return arg % 2 === 0;
+    },
+    isOdd: (arg: number) => {
+        return !NumberBalidator.isEven(arg);
+    }
+}
+
 
 const RangeBalidator: RangeBalidatorType = {
     inRangeNumber: (value: number, min?: number, max?: number) => (min && max && min < value && value <= max) || (max && value <= max) || (min && min < value) || false,
