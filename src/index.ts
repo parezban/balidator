@@ -58,7 +58,11 @@ const NumberBalidator: BaseBalidatorType = {
 
 const LocationBalidator: BaseBalidatorType = {
     isLat: (arg: string) => {
-        const re = /^(\+|-)?(?:90(?:(?:\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\.[0-9]{1,6})?))$/        ;
+        const re = /^(\+|-)?(?:90(?:(?:\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\.[0-9]{1,6})?))$/;
+        return re.test(arg);
+    },
+    isLng: (arg: string) => {
+        const re = /^(\+|-)?(?:180(?:(?:\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\.[0-9]{1,6})?))$/;
         return re.test(arg);
     }
 }
