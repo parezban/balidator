@@ -56,6 +56,13 @@ const NumberBalidator: BaseBalidatorType = {
     }
 }
 
+const LocationBalidator: BaseBalidatorType = {
+    isLat: (arg: string) => {
+        const re = /^(\+|-)?(?:90(?:(?:\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\.[0-9]{1,6})?))$/        ;
+        return re.test(arg);
+    }
+}
+
 
 const RangeBalidator: RangeBalidatorType = {
     inRangeNumber: (value: number, min?: number, max?: number) => (min && max && min < value && value <= max) || (max && value <= max) || (min && min < value) || false,
