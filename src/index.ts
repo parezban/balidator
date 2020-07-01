@@ -47,6 +47,12 @@ const CreditCardBalidator: BaseBalidatorType = {
     },
 }
 
+const CurrencyBalidator: BaseBalidatorType = {
+    isBTCAddress:(arg:string)=>{
+        const re = /^[13][a-km-zA-HJ-NP-Z0-9]{26,33}$/;
+        return re.test(arg);
+    }
+}
 const NumberBalidator: BaseBalidatorType = {
     isEven: (arg: number) => {
         return arg % 2 === 0;
