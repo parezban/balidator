@@ -112,6 +112,10 @@ const TypeValidator: BaseBalidatorType = {
         return true
 
     },
+    isISBN: (arg:string)=>{
+        const re = /^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$/;
+        return re.test(arg);
+    },
     isJSON: (arg: string) => {
         try {
             JSON.parse(arg)
