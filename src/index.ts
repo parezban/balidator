@@ -48,7 +48,7 @@ const CreditCardBalidator: BaseBalidatorType = {
 }
 
 const CurrencyBalidator: BaseBalidatorType = {
-    isBTCAddress:(arg:string)=>{
+    isBTCAddress: (arg: string) => {
         const re = /^[13][a-km-zA-HJ-NP-Z0-9]{26,33}$/;
         return re.test(arg);
     }
@@ -59,7 +59,11 @@ const NumberBalidator: BaseBalidatorType = {
     },
     isOdd: (arg: number) => {
         return !NumberBalidator.isEven(arg);
-    }
+    },
+    isPositive: (arg: number) => {
+        return arg > 0;
+    },
+
 }
 
 const LocationBalidator: BaseBalidatorType = {
@@ -112,7 +116,7 @@ const TypeValidator: BaseBalidatorType = {
         return true
 
     },
-    isISBN: (arg:string)=>{
+    isISBN: (arg: string) => {
         const re = /^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$/;
         return re.test(arg);
     },
