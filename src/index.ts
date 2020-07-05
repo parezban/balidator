@@ -61,7 +61,10 @@ const NumberBalidator: BaseBalidatorType = {
         return !NumberBalidator.isEven(arg);
     },
     isPositive: (arg: number) => {
-        return arg > 0;
+        return arg >= 0;
+    }, 
+    isNegative: (arg: number) => {
+        return arg < 0;
     },
 
 }
