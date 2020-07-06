@@ -62,7 +62,7 @@ const NumberBalidator: BaseBalidatorType = {
     },
     isPositive: (arg: number) => {
         return arg >= 0;
-    }, 
+    },
     isNegative: (arg: number) => {
         return arg < 0;
     },
@@ -118,6 +118,10 @@ const TypeValidator: BaseBalidatorType = {
         }
         return true
 
+    },
+    isYoutubeLink: (arg: string) => {
+        const re = /(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?/;
+        return re.test(arg);
     },
     isISBN: (arg: string) => {
         const re = /^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$/;
