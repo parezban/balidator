@@ -366,3 +366,10 @@ const TypeValidator: BaseBalidatorType = {
         return !isNaN(dateObj);
     },
 }
+
+
+const Balidators = {
+    all: (checks: Array<Function>) => {
+        return checks.every(check => check())
+    }
+}
