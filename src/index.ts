@@ -371,5 +371,8 @@ const TypeValidator: BaseBalidatorType = {
 const Balidators = {
     all: (checks: Array<Function>) => {
         return checks.every(check => check())
+    },
+    oneOf: (checks: Array<Function>) => {
+        return checks.some(check => check())
     }
 }
